@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.KotlinService;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
     private final UserService userService;
+    private final KotlinService kotlinService;
 
     @GetMapping
     public String getWelcome() {
@@ -27,6 +29,6 @@ public class UserController {
 
     @GetMapping("/users")
     public String getUsers() {
-        return userService.findAll().toString();
+        return kotlinService.findAll().toString();
     }
 }

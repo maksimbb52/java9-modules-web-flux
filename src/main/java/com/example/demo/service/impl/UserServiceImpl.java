@@ -15,13 +15,13 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
 
-    @Override
-    public List<UserModel> findAll() {
-        return userRepository.findAll()
-                .stream()
-                .map(userMapper::entityToModel)
-                .collect(Collectors.toList());
-    }
+//    @Override
+//    public List<UserModel> findAll() {
+//        return userRepository.findAll()
+//                .stream()
+//                .map(userMapper::entityToModel)
+//                .collect(Collectors.toList());
+//    }
 
     @Override
     public UserModel findById(Long id) {

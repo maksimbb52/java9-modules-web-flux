@@ -8,10 +8,14 @@ import com.example.demo.service.KotlinService;
 import com.example.demo.service.UserService;
 import com.example.demo.service.impl.KotlinServiceImpl;
 import com.example.demo.service.impl.UserServiceImpl;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@Configuration
+@SpringBootApplication
+@EntityScan(basePackages = "com.example.demo.entity")
+@EnableJpaRepositories(basePackages = "com.example.demo.dao")
 public class MvcConfiguration implements DefaultConfiguration, InitNotify {
 
     @Bean
